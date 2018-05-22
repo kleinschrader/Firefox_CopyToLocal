@@ -1,0 +1,108 @@
+; -- Created with ISN Form Studio 2 for ISN AutoIt Studio -- ;
+#include <StaticConstants.au3>
+#include <GUIConstantsEx.au3>
+#include <WindowsConstants.au3>
+#Include <GuiButton.au3>
+#include <ComboConstants.au3>
+
+$ProfileSelection = GUICreate("ProfileSelection",159,82,-1,-1,-1,-1)
+GUICtrlCreateButton("Ok",10,38,139,30,-1,-1)
+GUICtrlCreateCombo("",10,10,139,21,-1,-1)
+GUICtrlSetData(-1,"Mein Text")
+
+
+
+#cs
+[gui]
+Handle_deklaration=default
+Handle_deklaration_const=default
+title=ProfileSelection
+breite=159
+hoehe=82
+style=-1
+exstyle=-1
+bgcolour=0xF0F0F0
+bgimage=none
+handle=ProfileSelection
+parent=
+code=
+codebeforegui=
+xpos=-1
+ypos=-1
+center_gui=true
+title_textmode=normal
+isf_include_once=false
+only_controls_in_isf=false
+const_modus=default
+gui_code_in_function=false
+gui_code_in_function_name=
+gui_event_close=
+gui_event_minimize=
+gui_event_restore=
+gui_event_maximize=
+gui_event_mousemove=
+gui_event_primarydown=
+gui_event_primaryup=
+gui_event_secoundarydown=
+gui_event_secoundaryup=
+gui_event_resized=
+gui_event_dropped=
+[0x00042A82]
+handle=409
+locked=0
+resize=
+code=
+type=button
+x=10
+y=38
+width=139
+height=30
+text=Ok
+tooltip=
+state=$GUI_SHOW+$GUI_ENABLE
+style=
+exstyle=
+textcolour=0x000000
+bgcolour=
+font=MS Sans Serif
+fontsize=8
+fontstyle=400
+fontattribute=0
+id=
+func=
+bgimage=
+order=0
+tabpage=-1
+iconindex=
+textmode=text
+[0x00022D08]
+handle=418
+locked=0
+resize=
+code=
+type=combo
+x=10
+y=10
+width=139
+height=21
+text=Mein Text
+tooltip=
+state=$GUI_SHOW+$GUI_ENABLE
+style=
+exstyle=
+textcolour=0x000000
+bgcolour=
+font=MS Sans Serif
+fontsize=8
+fontstyle=400
+fontattribute=0
+id=
+func=
+bgimage=
+order=2
+tabpage=-1
+iconindex=
+textmode=text
+[tab]
+code=; -- Created with ISN Form Studio 2 for ISN AutoIt Studio -- ;[BREAK]#include <StaticConstants.au3>[BREAK]#include <GUIConstantsEx.au3>[BREAK]#include <WindowsConstants.au3>[BREAK]#Include <GuiButton.au3>[BREAK]#include <ComboConstants.au3>[BREAK][BREAK]$ProfileSelection = GUICreate("ProfileSelection",159,82,-1,-1,-1,-1)[BREAK]GUICtrlCreateButton("Ok",10,38,139,30,-1,-1)[BREAK]GUICtrlCreateCombo("",10,10,139,21,-1,-1)[BREAK]GUICtrlSetData(-1,"Mein Text")[BREAK]
+#ce
