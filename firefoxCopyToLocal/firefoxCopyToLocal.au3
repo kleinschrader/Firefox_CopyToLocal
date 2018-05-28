@@ -23,7 +23,7 @@ local $appdata = EnvGet("appdata")
 __dbgOut("Got Appdata value! Appdata = " & $appdata)
 
 __dbgOut("Retrieving userprofile Value...")
-local $userprofile = EnvGet("userprofile")
+local $userprofile = "C:\Users\" & EnvGet("username")
 __dbgOut("Got userprofile value! Userprofile = " & $userprofile)
 
 __dbgOut("Retrieving Location of the Firefox ini")
@@ -46,35 +46,35 @@ if $numberOfProfiles > 1 Then
 	for $i = 1 to $numberOfProfiles
 		__dbgOut($i & ") Sectionname: " & $profiles[$i - 1] & " Profilename: " & IniRead($firefoxINI,$profiles[$i - 1],"Name","ERROR"))
 	Next
-	
+
 	__dbgOut("Please Select the Profile you want to copy to local")
-		
+
 	$ProfileSelection = GUICreate("ProfileSelection",159,82,-1,-1,-1,-1)
 	$iOkButton = GUICtrlCreateButton("Ok",10,38,139,30,-1,-1)
 	$dropbox = GUICtrlCreateCombo("",10,10,139,21,-1,-1)
 	for $i = 1 to $numberOfProfiles
 		GUICtrlSetData(-1,IniRead($firefoxINI,$profiles[$i - 1],"Name","ERROR"))
 	Next
-	
+
 	GUISetState(@SW_SHOW,$ProfileSelection)
-	
+
 	local $message
 	While $message <> $GUI_EVENT_CLOSE
 		$message = GUIGetMsg()
-		
+
 		if $message == $iOkButton Then
 			GUISetState(@SW_HIDE,$ProfileSelection)
 			ExitLoop
 		EndIf
-		
+
 		Sleep(50)
 	WEnd
-	
+
 	$selection = _GUICtrlComboBox_FindStringExact($dropbox,GUICtrlRead($dropbox))
-	
+
 	__dbgOut("User Selected: " & GUICtrlRead($dropbox))
 Else
-	__dbgOut("Only 1 Profile, dont show dialog...")	
+	__dbgOut("Only 1 Profile, dont show dialog...")
 	$selection = 0
 EndIf
 
